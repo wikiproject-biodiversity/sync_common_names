@@ -31,7 +31,7 @@ query = f"""SELECT DISTINCT ?commonname ?taxon  WHERE {{
                      {{?taxon skos:altLabel ?lcasecommonname }} UNION {{?taxon rdfs:label ?lcasecommonname }}}}
 
 }}
-LIMIT 10"""
+LIMIT 50"""
 common_names = wdi_core.WDItemEngine.execute_sparql_query(query=query, as_dataframe=True)
 
 # Write those labels to Wikidata.
